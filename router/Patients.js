@@ -5,8 +5,8 @@ const _ = require('lodash');
 const _itemsPerPage = 10;
 
 /*INITIALIZE A PARAM THAT IS USED MULTIPLE TIMES*/
-PatientsRouter.param('patientsId', function(req, res, next){
-  PatientsModel.findById(req.params.PatientsId).then(function(_data){
+PatientsRouter.param('patientId', function(req, res, next){
+  PatientsModel.findById(req.params.patientId).then(function(_data){
     console.log(_data);
     req.item = _data;
     next();
@@ -16,7 +16,10 @@ PatientsRouter.param('patientsId', function(req, res, next){
 /*DEFINE A GENERAL POST, NOT BINDED BY ANY ESPECIFIC ID*/
 PatientsRouter.post('/', function(req, res, next){
   let item = new PatientsModel(req.body);
-  item.save.then(_data => res.status(201).json(_data));
+  console.log(item);
+  item.save(function(data){
+    res.json(data).end();
+  });
 });
 
 PatientsRouter.get('/', function(req, res, next){
@@ -25,19 +28,19 @@ PatientsRouter.get('/', function(req, res, next){
   });
 });
 
-PatientsRouter.route('/:patientsId')
+PatientsRouter.route('/:patientId')
 .get(function(req, res, next){
-  res.json(req.item);
+  res.json(req.item).end();
 })
 .put(function(req, res, next){
   req.item.set(req.body);
   req.item.save(function(item){
-    res.json(item);
+    res.json(item).end();
   });
 })
 .delete(function(req, res, next){
   req.item.remove(function(){
-    res.json({});
+    res.json({}).end();
   });
 });
 
