@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="angularApp" ng-strict-di>
+<head>
+  <title>simpleCrud</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <link rel="manifest" href="../manifest.json">
+  <!-- start template tags -->
+  <link rel="stylesheet" href="css/10materialize.css?v="/>
+  <link rel="stylesheet" href="css/20materialize-stickyfooter.css?v="/>
+  <link rel="stylesheet" href="css/30loading-bar.css?v="/>
+  <link rel="stylesheet" href="css/40spinkit.css?v="/>
+  <link rel="stylesheet" href="css/50fontawesome-all.min.css?v="/>
+  <link rel="stylesheet" href="css/60ngDialog.css?v="/>
+  <link rel="stylesheet" href="css/61ngDialog-theme-default.css?v="/>
+  <link rel="stylesheet" href="css/70fullcalendar.css?v="/>
+  <link rel="stylesheet" href="css/90custom.css?v="/>
+  <script src="src/vendor/10jquery.js?v="></script>
+  <script src="src/vendor/20materialize.js?v="></script>
+  <script src="src/vendor/30angular.js?v="></script>
+  <script src="src/vendor/31angular-dirPagination.js?v="></script>
+  <script src="src/vendor/32angular-html5storage.js?v="></script>
+  <script src="src/vendor/33angular-loadingBar.js?v="></script>
+  <script src="src/vendor/34angular-materialize.js?v="></script>
+  <script src="src/vendor/35angular-resource.js?v="></script>
+  <script src="src/vendor/36angular-route.js?v="></script>
+  <script src="src/vendor/37angular-animate.js?v="></script>
+  <script src="src/vendor/38angular-dialogs.js?v="></script>
+  <script src="src/vendor/39angular-rut.js?v="></script>
+  <script src="src/vendor/40angular-indexed-db.js?v="></script>
+  <script src="src/vendor/41angular-confirm.js?v="></script>
+  <script src="src/vendor/42angular-local-resource.js?v="></script>
+  <script src="src/vendor/49angular-templates.js?v="></script>
+  <script src="src/vendor/50FileSaver.js?v="></script>
+  <script src="src/vendor/60xlsx.full.min.js?v="></script>
+  <script src="src/vendor/70moment.js?v="></script>
+  <script src="src/vendor/80fullcalendar.js?v="></script>
+  <script src="src/vendor/81fullcalendar-locale-es.js?v="></script>
+  <script src="src/vendor/90lodash.js?v="></script>
+  <script src="src/module/10index.js?v="></script>
+  <script src="src/module/20routeProvider.js?v="></script>
+  <script src="src/module/22ngDialogProvider.js?v="></script>
+  <script src="src/module/23httpProvider.js?v="></script>
+  <script src="src/directive/addButton/index.js?v="></script>
+  <script src="src/directive/appNav/controller.js?v="></script>
+  <script src="src/directive/appNav/index.js?v="></script>
+  <script src="src/directive/deleteButton/index.js?v="></script>
+  <script src="src/directive/inputAutocomplete/controller.js?v="></script>
+  <script src="src/directive/inputAutocomplete/index.js?v="></script>
+  <script src="src/directive/inputSwitch/controller.js?v="></script>
+  <script src="src/directive/inputSwitch/index.js?v="></script>
+  <script src="src/directive/preLoadingIndicator/controller.js?v="></script>
+  <script src="src/directive/preLoadingIndicator/index.js?v="></script>
+  <script src="src/directive/routeLoadingIndicator/index.js?v="></script>
+  <script src="src/directive/saveButton/index.js?v="></script>
+  <script src="src/directive/stringToNumber/index.js?v="></script>
+  <script src="src/factory/patients/index.js?v="></script>
+  <script src="src/factory/preventTemplateCache/index.js?v="></script>
+  <script src="src/filter/dateRange/index.js?v="></script>
+  <script src="src/filter/toString/index.js?v="></script>
+  <script src="src/filter/unique/index.js?v="></script>
+  <script src="src/module/modal/patient/controller.js?v="></script>
+  <script src="src/module/route/home/controller.js?v="></script>
+  <script src="src/module/route/managePatients/controller.js?v="></script>
+  <!-- end template tags -->
+
+  <script src="//localhost:35729/livereload.js"></script>
+
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+  <header>
+    <ul id="apps-side-nav" class="side-nav fixed grey darken-4">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img class="responsive-img" src="img/sidenav-background.jpg">
+          </div>
+          <!-- <a><img materialboxed class="materialboxed responsive-img circle center" ng-src="img/avatar{{$storage.currentUser.id}}.png"></a> -->
+          <!-- <a><span class="white-text name">{{$storage.currentUser.full_name}}</span></a> -->
+        </div>
+      </li>
+      <li><a href="#!/home" class="white-text"><i class="fas fa-home fa-2x white-text"></i>Home</a></li>
+      <li><div class="divider"></div></li>
+      <!-- <li ng-class="$location.url() == '/newAppointment' && 'grey'"><a href="#!/newAppointment" ng-class="$location.url() == '/newAppointment' ? 'black-text':'white-text'"><i class="fas fa-notes-medical fa-2x" ng-class="$location.url() == '/newAppointment' ? 'black-text':'white-text'"></i>Nuevo Turno</a></li> -->
+      <!-- <li ng-class="$location.url() == '/patientControlList' && 'grey'"><a href="#!/patientControlList" ng-class="$location.url() == '/patientControlList' ? 'black-text':'white-text'"><i class="fas fa-clipboard-list fa-2x" ng-class="$location.url() == '/patientControlList' ? 'black-text':'white-text'"></i>Usuarios en Control</a></li> -->
+      <!-- <li ng-class="$location.url() == '/dailyStatistics' && 'grey'"><a href="#!/dailyStatistics" ng-class="$location.url() == '/dailyStatistics' ? 'black-text':'white-text'"><i class="fas fa-calendar-alt fa-2x" ng-class="$location.url() == '/dailyStatistics' ? 'black-text':'white-text'"></i>Estadística Diaria</a></li> -->
+      <!-- <li ng-class="$location.url() == '/monthlyReport' && 'grey'"><a href="#!/monthlyReport" ng-class="$location.url() == '/monthlyReport' ? 'black-text':'white-text'"><i class="fas fa-bug fa-2x" ng-class="$location.url() == '/monthlyReport' ? 'black-text':'white-text'"></i>Estadística Mensual</a></li> -->
+      <!-- <li><div class="divider"></div></li> -->
+      <!-- <li ng-class="$location.url() == '/manageDoctors' && 'grey'"><a href="#!/manageDoctors" ng-class="$location.url() == '/manageDoctors' ? 'black-text':'white-text'"><i class="fas fa-user-md fa-2x" ng-class="$location.url() == '/manageDoctors' ? 'black-text':'white-text'"></i>Administrar Medicos</a></li> -->
+      <li><a href="#!/managePatients" class="white-text"><i class="fas fa-user fa-2x white-text"></i>Administrar Usuarios</a></li>
+      <!-- <li ng-class="$location.url() == '/manageOperators' && 'grey'"><a href="#!/manageOperators" ng-class="$location.url() == '/manageOperators' ? 'black-text':'white-text'"><i class="fas fa-user-tie fa-2x" ng-class="$location.url() == '/manageOperators' ? 'black-text':'white-text'"></i>Administrar Operadores</a></li> -->
+      <!-- <li><div class="divider"></div></li> -->
+      <!-- <li><a href="#!/exit" class="white-text"><i class="fas fa-sign-out-alt fa-2x white-text"></i>LogOut</a></li> -->
+    </ul>
+  </header>
+  <main>
+    <div class="row">
+      <div class="col l12 s12">
+        <!-- <ng-include src="'/src/module/include/loader/template.html'" ng-show="mc.isRouteLoading"></ng-include> -->
+        <ng-view></ng-view>
+      </div>
+    </div>
+  </main>
+  <footer class="footer grey darken-4" style="padding-top: 10px; padding-bottom: 10px;">
+    <div class="container">
+      <div class="footer-copyright left">
+        <!-- <a class="grey-text text-lighten-4" href="mailto: l.arancibiaf@gmail.com">© <?php echo constant("envAuthor") ?></a><br> -->
+        <!-- <a class="grey-text text-lighten-4" href="/phpliteadmin.php">PHPLiteAdmin</a> -->
+      </div>
+      <div class="footer-copyright right">
+        <!-- <a class="grey-text text-lighten-4" href="#!/">BuildNo: <?php echo constant("envShortSHA") ?></a><br> -->
+        <a class="grey-text text-lighten-4" href="#!/">PoweredBy: AngularJS 1.6.X</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

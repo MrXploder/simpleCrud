@@ -1,0 +1,270 @@
+nav ul li a{
+  color: black;
+}
+nav a{
+  color: black;
+}
+
+.top-nav{
+  height: 122px;
+  box-shadow: none;
+}
+
+th{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+body {
+  background-image: radial-gradient(circle, #ffffff, #eef1ff, #d3e6ff, #adddff, #7bd6fd);
+}
+
+p.box {
+  padding: 20px; 
+}
+
+p {
+  color: rgba(0, 0, 0, 0.71);
+  padding: 0;
+  -webkit-font-smoothing: antialiased; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased; 
+}
+
+nav {
+  overflow: hidden; 
+}
+nav a {
+  -webkit-font-smoothing: antialiased; 
+}
+nav ul li:hover, nav ul li.active {
+  background-color: #ea454b; 
+}
+
+.header {
+  color: #ee6e73;
+  font-weight: 300; 
+}
+
+.caption {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 30px; 
+}
+
+.preview {
+  background-color: #FFF;
+  border: 1px solid #eee;
+  padding: 20px 20px; 
+}
+
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+ header, main, footer {
+  padding-left: 0;
+}
+}
+
+nav.top-nav a.page-title {
+  line-height: 122px;
+  font-size: 48px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+.condensed-table tr th{
+  line-height: 0px;
+}
+.condensed-table td{
+  padding: 6px 5px;
+}
+.trunkated-table{
+  width: 100%;
+  table-layout: fixed;
+}
+.colored-table th{
+  background-color: #4caf50;
+  color: white;
+}
+.centered-table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-small {
+  height: 100%;
+  width: 100%;
+  line-height: 25px;
+  padding: 0 0.5rem;
+}
+
+.modal-topbordered{
+  border-top-style: solid;
+  border-top-width: 10px;
+}
+.green-topbordered{
+  border-top-color: #4CAF50;
+}
+.purple-topbordered{
+  border-top-color: #9c27b0;
+}
+.red-topbordered{
+  border-top-color: #f44336;
+}
+.screenCentered{
+  position: fixed;
+  top: 50%;
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+} 
+.highlighter {
+  color: #2196f3;
+}
+.vMiddle{
+  vertical-align: middle;
+}
+.hCenter{
+  text-align: center;
+}
+.sortedColumn{
+  background-color: #ff9800 !important;
+  color: #000000 !important;
+}
+.input-field label{
+  color: black !important;
+}
+.underlined{
+  border-bottom: solid 1px black !important;
+}
+@media only screen and (max-width: 992px){
+  table.responsive-table td {
+    text-align: center !important;
+  }
+  .btn, .btn-large, .btn-flat {
+    line-height: 25px !important;
+    height: 100% !important;
+  }
+  .description{
+    display: block;
+    width: 100px !important;
+  }
+}
+@media only screen and (min-width: 993px){
+  .description{
+    display: table-cell;
+  }
+}
+.modalLikeLoader{
+  background-color: rgba(0, 0, 0, 0) !important;
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+.material-tooltip {
+  width: 200px !important;
+}
+
+.row{
+  margin-bottom: 0px !important;
+}
+
+
+.input-field .postfix ~ input { width: 80%; width:calc(100% - 3rem);  margin-left:0px; margin-right: 3rem!important; }
+.input-field .postfix {
+  position: absolute;
+  width: 3rem;
+  right: 0px;
+  font-size: 2rem;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+.input-field .postfix.active {
+  color: #26a69a;
+}
+
+.autocomplete-content{
+  position: absolute !important;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+.toolbar-fixed {
+  width: 100%;
+  padding: 0;
+  height: 56px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.toolbar-fixed.active > a i {
+  opacity: 0;
+}
+
+.toolbar-fixed ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  bottom: 0;
+}
+
+
+.toolbar-fixed ul li {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: inline-block;
+  margin: -;
+  height: 100%;
+  transition: none;
+  position: relative;
+  top: -15px;
+
+}
+
+
+.toolbar-fixed ul li a{
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  line-height: 56px;
+  z-index: 1;
+}
+
+.toolbar-fixed ul li a i {
+  line-height: inherit;
+}
+
+.toolbar-fixed ul {
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.toolbar-fixed ul li {
+ margin-bottom: 15px;
+}
+
+.break-text{
+ word-break: break-all;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}

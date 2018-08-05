@@ -1,0 +1,46 @@
+<div class="fixed-action-btn" style="bottom: 80px">
+	<a class="btn-floating btn-large waves-effect waves-light green" ng-class="mpc.isAdding && 'disabled'" ng-click="mpc.addPatient()"><i class="fas" ng-class="mpc.isAdding ? 'fa-cog fa-spin black-text' : 'fa-plus'"></i></a>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col l12">
+			<div class="card grey lighten-4">
+				<div class="card-content">
+					<div class="row">
+						<div input-field class="col l12">
+							<i class="prefix fas fa-search"></i>
+							<label>Buscar... </label>
+							<input type="search" ng-class="mpc.searchTerm">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col l12">
+							<table class="bordered highlight centered-table">
+								<thead class="grey darken-3 white-text">
+									<tr>
+										<th>#</th>
+										<th>Nombre</th>
+										<th>Info</th>
+										<th>Eliminar</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate="patient in mpc.patients | filter: mpc.searchTerm | orderBy:mpc.sortBy:mpc.sortReverse | itemsPerPage: mpc.itemsPerPage track by $index" pagination-id="managepatientsId">
+										<td>{{patient._id}}</td>
+										<td>{{patient.full_name}}</td>
+										<td><a class="btn waves-effect waves-light" ng-click="mpc.details(patient)"><i class="fas fa-info"></i></td>
+										<td><a class="btn waves-effect waves-light red" ng-click="mpc.remove(patient)"><i class="fas fa-trash"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						&nbsp;
+						<div class="row">
+							<dir-pagination-controls boundary-links="true" template-url="src/directive/dirPaginationControls/template.html" pagination-id="managepatientsId"></dir-pagination-controls>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

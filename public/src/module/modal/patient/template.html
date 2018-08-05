@@ -1,0 +1,44 @@
+<ng-form name="odForm">
+	<div class="row" ng-if="vm.form._id">
+		<div input-field class="col l12">
+			<label class="active">ID</label>
+			<input type="text" ng-value="vm.form._id" readonly>
+		</div>
+	</div>
+	<div class="row">
+		<div input-field class="col l12">
+			<label class="active">Nombre Completo</label>
+			<input type="text" ng-model="vm.form.full_name" required>
+		</div>
+	</div>
+	<div class="row">
+		<div input-field class="col l12">
+			<label class="active">RUN</label>
+			<input type="text" ng-rut ng-model="vm.form.rut" required>
+		</div>
+	</div>
+	<div class="row">
+		<div input-field class="col l12">
+			<label>Numero de Telefono</label>
+			<input type="text" ng-model="vm.form.phone_number">
+		</div>
+	</div>
+	<div class="row">
+		<div input-field class="col l12">
+			<label>Numero de Celular</label>
+			<input type="text" ng-model="vm.form.mobile_number">
+		</div>
+	</div>
+	<div class="row">
+		<div input-field class="col l12">
+			<label ng-class="vm.form.allergies != null && 'active'">Alergias</label>
+			<select material-select ng-model="vm.form.allergies">
+				<option value="Si">Si</option>
+				<option value="No">No</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<save-button dr-disabled="!odForm.$valid" ng-click="vm.save()"></save-button>
+	</div>
+</ng-form>

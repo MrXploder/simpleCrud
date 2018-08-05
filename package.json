@@ -1,0 +1,46 @@
+{
+  "name": "simplecrud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "port": "3000",
+    "mode": "development"
+  },
+  "scripts": {
+    "start": "grunt dev && start http://localhost:3000 && supervisor app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrXploder/simpleCrud.git"
+  },
+  "author": "MrXploder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrXploder/simpleCrud/issues"
+  },
+  "homepage": "https://github.com/MrXploder/simpleCrud#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.16.3",
+    "grunt": "^1.0.3",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-obfuscator": "^4.0.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-gitinfo": "^0.1.8",
+    "grunt-html2js": "^0.5.1",
+    "grunt-ng-constant": "^2.0.1",
+    "grunt-preprocess": "^5.1.0",
+    "grunt-script-link-tags": "^1.0.2"
+  }
+}
