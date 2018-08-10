@@ -32,10 +32,7 @@
 	<div class="row">
 		<div input-field class="col l12">
 			<label ng-class="vm.form.allergies != null && 'active'">Alergias</label>
-			<select material-select ng-model="vm.form.allergies">
-				<option value="Si">Si</option>
-				<option value="No">No</option>
-			</select>
+			<select material-select ng-model="vm.form.allergies" ng-options="item.select as item.label for item in [{label: 'Si', select: true},{label: 'No', select: false}]"></select>
 		</div>
 	</div>
 	<div class="row">

@@ -12,10 +12,10 @@ let PatientsModel = require('./model/Patients');
 
 ////////////////////////////////////////////////
 
-var patient = new PatientsModel({
+let patient = new PatientsModel({
 	rut: "17.808.998-6",
 	full_name: "Luis Arancibia",
-	allergies: true,
+	allergies: "Si",
 	phone_number: "56232941275",
 	mobile_number: "56957139808"
 });

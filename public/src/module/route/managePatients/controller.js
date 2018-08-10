@@ -53,7 +53,7 @@
 				controllerAs: "vm",
 				showClose: true,
 				data: patient,
-			});
+			}).then(activate);
 		}
 
 		function remove(patient){
